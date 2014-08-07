@@ -11,7 +11,7 @@ const int encCntrlPin =    A0;
 int encCnt =               0;
 int encDir =               0;
 int encRes =               256;
-int encSpd =               6;
+int encSpd =               5;
 int greyCnt =              0;
 int encCntrlMax =          975;
 
@@ -40,8 +40,7 @@ void loop() {
     if (encCnt < 0) {
       encCnt = encRes;
     }
-    encSpd = 6;
-    encDir = -1;
+    encSpd = 5;
   }
   else if (encCntrlVal > 680) {
     greyCnt++;
@@ -52,11 +51,9 @@ void loop() {
     if (encCnt > encRes) {
       encCnt = 0;
     }
-    encSpd = 6;
-    encDir = 1;
+    encSpd = 5;
   }
   else {
-    encDir = 0;
     return;
   }
   
