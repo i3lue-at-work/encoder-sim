@@ -13,6 +13,7 @@ int encDir =               0;
 int encRes =               256;
 int encSpd =               500;
 int greyCnt =              0;
+int encCntrlMax =          950;
 
 // setup
 void setup() {
@@ -68,13 +69,13 @@ void loop() {
   if (encCntrlVal < 86){
     encSpd = 508;
   }
-  if (encCntrlVal > (1023 - 258)){
+  if (encCntrlVal > (encCntrlMax - 258)){
     encSpd = 488;
   }
-  if (encCntrlVal > (1023 - 172)){
+  if (encCntrlVal > (encCntrlMax - 172)){
     encSpd = 498;
   }
-  if (encCntrlVal > (1023 - 86)){
+  if (encCntrlVal > (encCntrlMax - 86)){
     encSpd = 508;
   }    
   delay(512 - encSpd);
