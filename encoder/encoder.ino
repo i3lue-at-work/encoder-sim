@@ -11,7 +11,7 @@ const int encCntrlPin =    A0;
 int encCnt =               0;
 int encDir =               0;
 int encRes =               256;
-int encSpd =               500;
+int encSpd =               6;
 int greyCnt =              0;
 int encCntrlMax =          975;
 
@@ -40,7 +40,7 @@ void loop() {
     if (encCnt < 0) {
       encCnt = encRes;
     }
-    encSpd = 478;
+    encSpd = 6;
     encDir = -1;
   }
   else if (encCntrlVal > 680) {
@@ -52,7 +52,7 @@ void loop() {
     if (encCnt > encRes) {
       encCnt = 0;
     }
-    encSpd = 478;
+    encSpd = 6;
     encDir = 1;
   }
   else {
@@ -61,24 +61,24 @@ void loop() {
   }
   
   if (encCntrlVal < 258){
-    encSpd = 488;
+    encSpd = 7;
   }
   if (encCntrlVal < 172){
-    encSpd = 498;
+    encSpd = 8;
   }
   if (encCntrlVal < 86){
-    encSpd = 508;
+    encSpd = 9;
   }
   if (encCntrlVal > (encCntrlMax - 258)){
-    encSpd = 488;
+    encSpd = 7;
   }
   if (encCntrlVal > (encCntrlMax - 172)){
-    encSpd = 498;
+    encSpd = 8;
   }
   if (encCntrlVal > (encCntrlMax - 86)){
-    encSpd = 508;
+    encSpd = 9;
   }    
-  delay(512 - encSpd);
+  delay(10 - encSpd);
   
   indexOut();
   alphaOut();
