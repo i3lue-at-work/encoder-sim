@@ -13,7 +13,7 @@ int encDir =               0;
 int encRes =               256;
 int encSpd =               500;
 int greyCnt =              0;
-int encCntrlMax =          950;
+int encCntrlMax =          975;
 
 // setup
 void setup() {
@@ -43,7 +43,7 @@ void loop() {
     encSpd = 478;
     encDir = -1;
   }
-  else if (encCntrlVal > 690) {
+  else if (encCntrlVal > 680) {
     greyCnt++;
     if (greyCnt > 3) {
       greyCnt = 0;
